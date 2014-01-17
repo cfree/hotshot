@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Google Map</title>
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<div id="map"></div>
+		<div id="ui">
+			<h1>I Am Mover</h1>
+			<p>Enter the weight of your goods below and click on two different places on the map to see the distance between them and the cost of movin your good.</p>
+			<h3>Our charges</h3>
+			<dl class="clearfix">
+				<dt>Base rate (per mile)</dt>
+				<dd>$3</dd>
+				<dt>Cost per kg per mile</dt>
+				<dd>$0.25</dd>
+			</dl>
+			<input id="weight" placeholder="Weight (kg)" />
+		</div>
+		<div id="hqInfo">
+			<img class="float-left" src="http://placehold.it/140x100" />
+			<h1>I Am Mover</h1>
+			<p>This is where we are based.</p>
+			<p>Call: 012-123-3212</p>
+			<p>Email: info@i-am-mover.com</p>
+		</div>
+		
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script src="../common/js/jquery-1.10.2.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
