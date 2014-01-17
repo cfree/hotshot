@@ -12,7 +12,7 @@
 			ui = $('#ui'),
 			clicks = 0,
 			positions = [],
-			assetsPath = '../common/img/';
+			assetsPath = '../../common/img/';
 
 		// Create a new marker for the starting point
 		var homeMarker = new api.Marker({
