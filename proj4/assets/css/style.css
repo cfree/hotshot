@@ -1,0 +1,101 @@
+.filter-form .ui-btn {
+	margin:10px 0 0 0; 
+	float:right; 
+}
+
+.ui-footer small { 
+	display:block; 
+	margin:10px; 
+	float:left; 
+}
+
+.ui-footer .ui-btn { 
+	margin:2px 10px 0 0; 
+	float:right; 
+}
+
+.ui-bar { 
+	margin:0 -15px 14px -15px; 
+	text-align:center; 
+}
+
+.ui-bar a:first-child { 
+	margin-left:-5px; 
+	float:left; 
+}
+
+.ui-bar a:last-child { 
+	margin-right:-5px; 
+	float:right; 
+}
+
+.ui-bar h2 { 
+	margin-top:10px; 
+	font-size:14px; 
+}
+
+.footer-bar { 
+	margin-top:14px; 
+}
+
+.bounty {
+	width:24%; 
+	border-radius:3px; 
+	margin-right:5%; 
+	float:left;
+	text-align:center; 
+	font-size:90%; 
+	line-height:1.5em;
+	font-weight:bold; 
+	color:#fff; 
+	background-color:#07d;
+	text-shadow:none;
+}
+
+.bounty span { 
+	display:block; 
+}
+
+.expires {
+	font-size:70%; 
+	font-weight:normal; 
+	line-height:1em;
+}
+
+.expires .value {
+	display:block; 
+	font-size:110%; 
+	font-weight:bold;
+	line-height:1.5em;
+}
+
+.title {
+	width:70%; 
+	margin-top:-.25em; 
+	float:left;
+	white-space:normal; 
+	font-size:80%; 
+	line-height:1.25em;
+	color:#07d;
+}
+
+.meta { 
+	clear:both; 
+}
+
+.meta span {
+	width:24%; 
+	margin-right:5%; 
+	float:left; 
+	font-size:70%;
+	font-weight:normal; 
+	color:#999;
+}
+
+.meta .value {
+	width:70%; 
+	margin-right:0; 
+	float:none; 
+	font-size:90%;
+	font-weight:bold;
+} 

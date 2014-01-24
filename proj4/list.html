@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<title>Active Bounties</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<script src="http://borismoore.github.com/jsrender/jsrender.js">
+</script>
+	</head>
+	<body> 
+		<div id="list" data-role="page">
+			<div data-role="header">
+				<h1>Active Bounties</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">
+				<div class="ui-bar ui-bar-c">
+                	<a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
+                		Prev
+                	</a>
+                	<h2>
+                		Page 
+                		<span class="num"></span>
+                		 of 
+                		 <span class="of"></span>
+                	</h2>
+                	<a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
+                		Next
+                	</a>
+            	</div>
+            
+            	<div id="results"></div>
+
+	            <div class="ui-bar ui-bar-c footer-bar">
+	                <a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
+	                	Prev
+	                </a>
+	                <h2>
+	                	Page 
+	                	<span class="num"></span>
+	                	 of 
+	                	 <span class="of"></span>
+	                </h2>
+	                <a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
+	                	Next
+	                </a>
+	            </div>
+			</div><!-- /content -->
+			<img src="../common/img/boba.png" alt="Bounty Hunter" />
+			<div data-role="footer" data-position="fixed" data-id="footer">
+				<small>&copy; 2014 Denver Code Club</small>
+				<a href="about.html" data-icon="info" data-role="button" data-transition="slide">
+					About
+				</a>
+			</div>
+			<script id="listTemplate" type="text/x-jquery-tmpl">
+				<ul data-role="listview">
+					{{for items}}
+						<li data-shadow="false" data-icon="arrow-r" data-iconpos="right">
+							<a href="#" id="item-{{:#index}}">
+								<div class="bounty">
+									<span>+{{:bounty_amount}}</span>
+									<span class="expires">
+										Expires on:
+										<span class="value">
+											{{:~CreateDate(bounty_closes_date)}}
+										</span>
+									</span>
+								</div>
+								<h1 class="title">{{:title}}</h1>
+								<div class="meta">
+									<span>
+										Answers:
+										<span class="value">
+											{{:answer_count}}
+										</span>
+									</span>
+									<span class="activity">
+										Last activity on:
+										<span class="value">
+											{{:~CreateDate(last_activity_date)}}
+										</span>
+									</span>
+								</div>
+							</a>
+						</li>
+					{{/for}}
+				</ul>
+			</script>
+		</div><!-- /page -->
+
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
