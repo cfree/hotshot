@@ -19,39 +19,42 @@
 				<h1>Active Bounties</h1>
 			</div><!-- /header -->
 
+			<div class="ui-bar ui-bar-c">
+            	<a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
+            		Prev
+            	</a>
+            	<h2>
+            		Page 
+            		<span class="num"></span>
+            		 of 
+            		 <span class="of"></span>
+            	</h2>
+            	<a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
+            		Next
+            	</a>
+        	</div>
+
 			<div data-role="content">
-				<div class="ui-bar ui-bar-c">
-                	<a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
-                		Prev
-                	</a>
-                	<h2>
-                		Page 
-                		<span class="num"></span>
-                		 of 
-                		 <span class="of"></span>
-                	</h2>
-                	<a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
-                		Next
-                	</a>
-            	</div>
-            
+				            
             	<div id="results"></div>
 
-	            <div class="ui-bar ui-bar-c footer-bar">
-	                <a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
-	                	Prev
-	                </a>
-	                <h2>
-	                	Page 
-	                	<span class="num"></span>
-	                	 of 
-	                	 <span class="of"></span>
-	                </h2>
-	                <a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
-	                	Next
-	                </a>
-	            </div>
 			</div><!-- /content -->
+
+			<div class="ui-bar ui-bar-c footer-bar">
+                <a href="#" data-role="button" data-icon="back" data-inline="true" data-mini="true" class="ui-disabled">
+                	Prev
+                </a>
+                <h2>
+                	Page 
+                	<span class="num"></span>
+                	 of 
+                	 <span class="of"></span>
+                </h2>
+                <a href="#" data-role="button" data-icon="forward" data-iconpos="right" data-inline="true" data-mini="true" class="ui-disabled">
+                	Next
+                </a>
+            </div>
+
 			<img src="../common/img/boba.png" alt="Bounty Hunter" />
 			<div data-role="footer" data-position="fixed" data-id="footer">
 				<small>&copy; 2014 Denver Code Club</small>
@@ -92,6 +95,87 @@
 						</li>
 					{{/for}}
 				</ul>
+			</script>
+
+			<script id="itemTemplate" type="text/x-jquery-tmpl">
+				<div data-role="page" id="{{:pageid}}" class="item-view">
+					<div data-role="header" data-position="fixed">
+						<a href="list.html" data-shadow="false" data-icon="arrow-l" data-transition="slide" data-direction="reverse" title="Back to list view">
+							Back
+						</a>
+						<h1>{{:title}}</h1>
+					</div>
+				</div>
+				<div data-role="content">
+					<header class="ui-helper-clearfix">
+						<div class="bounty">
+							<span>+{{:bounty_amount}}</span>
+							<span class="expires">
+								Expires on:
+								<span class="value">
+									{{:!CreateDate(bounty_closes_date)}}
+								</span>
+							</span>
+						</div>
+						<div class="meta">
+							<span>
+								Asked on:
+								<span class="value">
+									{{:~CreateDate(creation_date)}}
+								</span>
+							</span>
+							<span>
+								Answers:
+								<span class="value">
+									{{:answer_count}}
+								</span>
+							</span>
+							<span class="activity">
+								Last Activity on:
+								<span class="value">
+									{{:~CreateDate(last_activity_date)}}
+								</span>
+							</span>
+						</div>
+
+						<h1 class="title">{{:title}}</h1>
+						<ul class="tags">
+							{{for tags}}
+								<li>{{:#data}}</li>
+							{{/for}}
+						</ul>
+
+						<div class="owner">
+							<a href="{{:owner.link}}" title="{{:owner.display_name}}">
+								<img src="{{:owner.profile_image}}" alt="{{:owner.display_name"/>
+								<div>
+									<h3>{{:owner.display_name}}</h3>
+									<span>
+										{{:owner.accept_rate}}% accept rate 
+									</span>
+								</div>
+							</a>
+						</div>
+						<a data-role="button" data-icon="gear" data-inline="true" href="{{:link}}" title="Answer on Stack Overflow">
+							Answer on Stack Overflow
+						</a>
+					</header>
+					<div class="question">
+						{{:body}}
+					</div>
+					<h2>Answers</h2>
+					<ul class="answer">
+						{{for answers}}
+						<li data-shadow="false">
+							<h3>
+								Answered By:
+								<span class="answer-name">
+									{{:owner.display_name}}
+								</span>
+								, on
+								
+					</ul>
+				</div>
 			</script>
 		</div><!-- /page -->
 

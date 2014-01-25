@@ -39,7 +39,7 @@
 				$(this).closest('.ui-btn').addClass('ui-disabled');
 
 				// Pull in list of tags from the text input
-				tags = $('tags').val();
+				tags = $('#tags').val();
 
 				// Go get 'em!
 				getBounties(1, function(data) {
@@ -65,11 +65,11 @@
 			// Re-enable the search button
 			$('#search').closest('.ui-btn').removeClass('ui-disabled');
 		})
-		// 
+		// Whenever the list page is first loaded...
 		.on('pageinit', '#list', function() {
-			var data = JSON.parse(localStorage.getItem('res')),
-				total = parseInt(data.total, 10),
-				size = parseInt(data.page, 10),
+			var data = JSON.parse(localStorage.getItem('res')), // Retrieve the JSON string, parse back into an object
+				total = parseInt(data.total, 10), // Total number of results
+				size = parseInt(data.page, 10), // Page size data
 				totalPages = Math.ceil(total / size),
 				months = [
 					'Jan',
@@ -85,21 +85,25 @@
 					'Nov',
 					'Dev'
 				],
-				createData = function(date) {
-					var cDate = new Date(date * 1000),
+				// Helper function for template
+				createDate = function(date) {
+					var cDate = new Date(date * 1000), // UNIX epoch date won't work with JS Date() constructor, so multiply by 1000
+						// Concatenate date array into one string
 						fDate = [
 							cDate.getDate(),
 							months[cDate.getMonth()],
-							cDate.getFullyYear()
+							cDate.getFullYear()
 						].join(' ');
 
 					return fDate;
 				};
 
+			// Make the createDate() function available to the template engine
 			$.views.helpers({
 				CreateDate: createDate
 			});
 
+			// Send the parsed results to the template, render
 			$('#results')
 				.append(
 					$('#listTemplate').render(data)
@@ -107,6 +111,7 @@
 				.find('ul')
 				.listview();
 
+			// Add/remove .ui-disabled class from buttons based on currentPage property (stored on the data obj)
 			var setClasses = function() {
 				if (data.currentPage > 1) {
 					$('a[data-icon="back"]').removeClass('ui-disabled');
@@ -123,9 +128,11 @@
 				}
 			};
 
+			// Update the headings
 			$('span.num').text(data.currentPage);
 			$('span.of').text(totalPages);
 
+			// Enable forward buttons if there are pages to display
 			if (totalPages > 1) {
 				$('a[data-icon="forward"]').removeClass('ui-disabled');
 			}
