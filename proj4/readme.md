@@ -9,5 +9,5 @@
 	- Error handling of 0 results
 	- Back button on list page to go back to search screen
 
-### Progress
-Complete
+### Status
+Completed
