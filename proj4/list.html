@@ -10,8 +10,7 @@
 
 		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-		<script src="http://borismoore.github.com/jsrender/jsrender.js">
-</script>
+		<script src="http://borismoore.github.com/jsrender/jsrender.js"></script>
 	</head>
 	<body> 
 		<div id="list" data-role="page">
@@ -105,77 +104,88 @@
 						</a>
 						<h1>{{:title}}</h1>
 					</div>
-				</div>
-				<div data-role="content">
-					<header class="ui-helper-clearfix">
-						<div class="bounty">
-							<span>+{{:bounty_amount}}</span>
-							<span class="expires">
-								Expires on:
-								<span class="value">
-									{{:!CreateDate(bounty_closes_date)}}
+					<div data-role="content">
+						<header class="ui-helper-clearfix">
+							<div class="bounty">
+								<span>+{{:bounty_amount}}</span>
+								<span class="expires">
+									Expires on:
+									<span class="value">
+										{{:~CreateDate(bounty_closes_date)}}
+									</span>
 								</span>
-							</span>
-						</div>
-						<div class="meta">
-							<span>
-								Asked on:
-								<span class="value">
-									{{:~CreateDate(creation_date)}}
+							</div>
+							<div class="meta">
+								<span>
+									Asked on:
+									<span class="value">
+										{{:~CreateDate(creation_date)}}
+									</span>
 								</span>
-							</span>
-							<span>
-								Answers:
-								<span class="value">
-									{{:answer_count}}
+								<span>
+									Answers:
+									<span class="value">
+										{{:answer_count}}
+									</span>
 								</span>
-							</span>
-							<span class="activity">
-								Last Activity on:
-								<span class="value">
-									{{:~CreateDate(last_activity_date)}}
+								<span class="activity">
+									Last Activity on:
+									<span class="value">
+										{{:~CreateDate(last_activity_date)}}
+									</span>
 								</span>
-							</span>
-						</div>
+							</div>
+							<h1 class="title">{{:title}}</h1>
+							<ul class="tags">
+								{{for tags}}
+									<li>{{:#data}}</li>
+								{{/for}}
+							</ul>
 
-						<h1 class="title">{{:title}}</h1>
-						<ul class="tags">
-							{{for tags}}
-								<li>{{:#data}}</li>
+							<div class="owner">
+								<a href="{{:owner.link}}" title="{{:owner.display_name}}">
+									<img src="{{:owner.profile_image}}" alt="{{:owner.display_name}}"/>
+									<div>
+										<h3>{{:owner.display_name}}</h3>
+										<span>
+											{{:owner.accept_rate}}% accept rate 
+										</span>
+									</div>
+								</a>
+							</div>
+							<a data-role="button" data-icon="gear" data-inline="true" href="{{:link}}" title="Answer on Stack Overflow">
+								Answer on Stack Overflow
+							</a>
+						</header>
+						<div class="question">
+							{{:body}}
+						</div>
+						<h2>Answers</h2>
+						<ul class="answer">
+							{{for answers}}
+							<li data-shadow="false">
+								<h3>
+									Answered By:
+									<span class="answer-name">
+										{{:owner.display_name}}
+									</span>
+									, on
+									<span class="answer-date">
+										{{:~CreateDate(creation_date)}}
+									</span>
+								</h3>
+								<div>{{:body}}</div>
+							</li>
 							{{/for}}
 						</ul>
-
-						<div class="owner">
-							<a href="{{:owner.link}}" title="{{:owner.display_name}}">
-								<img src="{{:owner.profile_image}}" alt="{{:owner.display_name"/>
-								<div>
-									<h3>{{:owner.display_name}}</h3>
-									<span>
-										{{:owner.accept_rate}}% accept rate 
-									</span>
-								</div>
-							</a>
-						</div>
-						<a data-role="button" data-icon="gear" data-inline="true" href="{{:link}}" title="Answer on Stack Overflow">
-							Answer on Stack Overflow
-						</a>
-					</header>
-					<div class="question">
-						{{:body}}
 					</div>
-					<h2>Answers</h2>
-					<ul class="answer">
-						{{for answers}}
-						<li data-shadow="false">
-							<h3>
-								Answered By:
-								<span class="answer-name">
-									{{:owner.display_name}}
-								</span>
-								, on
-								
-					</ul>
-				</div>
+					<div data-role="footer" data-position="fixed" data-id="footer">
+						<small>&copy; 2014 Denver Code Club</small>
+						<a href="about.html" data-icon="info" data-role="button" data-transition="slide">
+							About
+						</a>
+					</div>
+				</div><!-- #page -->
 			</script>
 		</div><!-- /page -->
 

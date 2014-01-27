@@ -137,5 +137,28 @@
 				$('a[data-icon="forward"]').removeClass('ui-disabled');
 			}
 
+			// Render the template
+			$('#results').on('click', 'li', function() {
+				var index = $(this).find('a').attr('id').split('-')[1],
+					question = data.items[index];
+
+				// Getting the desired ID
+				question.pageid = 'item-view-' + index;
+
+				// Rendering the desired question
+				//$('#itemTemplate').render(question);
+				$('body').append($('#itemTemplate').render(question));
+
+				// // Get the page jQuery object to cache the page
+				var page = $('#item-view-' + index);
+
+				// // Delete the cache page reference when the navigating back
+				// page.attr('data-external-page', true).on('pageinit', $.mobile._bindPageRemove);
+
+				// // Add the desired animation
+				$.mobile.changePage(page, {
+					transition: 'slide'
+				});
+			});
 		});
 })(jQuery);

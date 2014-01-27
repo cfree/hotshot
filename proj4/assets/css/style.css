@@ -99,3 +99,126 @@
 	font-size:90%;
 	font-weight:bold;
 } 
+
+header {
+	padding: 15px;
+	border-bottom: 1px solid #fff;
+	margin: -15px -15px 0 -15px;
+	box-shadow: 0 1px 10px rgba(0,0,0,.3);
+}
+
+header:after {
+	content: '';
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+
+header .bounty {
+	margin-bottom: .75em;
+}
+
+header .meta {
+	width: 70%;
+	float: left;
+	clear: none;
+}
+
+header .meta span {
+	width: 100%;
+}
+
+header .title {
+	width: auto;
+	margin: 0;
+	float: none;
+	clear: both;
+	font-size: 125%;
+}
+
+.tags {
+	padding: 0;
+}
+
+.tags li {
+	padding: .5%;
+	border-right: 1px solid #7f9fb6;
+	border-bottom: 1px solid #3e6d8e;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	float: left;
+	list-style-type: none;
+	font-size: 90%;
+	color: #4a6b82;
+	background-color: #e0eaf1;
+}
+
+header a {
+	margin-left: 0;
+	float: left;
+	clear: both;
+	text-decoration: none;
+}
+
+.owner {
+	padding: 2.5%;
+	margin: 15px 0;
+	float: left;
+	clear: both;
+	font-size: 70%;
+	background-color: #e0eaf1;
+}
+
+.owner img {
+	width: 25%;
+	margin-right: 5%;
+	float: left;
+}
+
+.owner div {
+	width: 70%;
+	float: left;
+}
+
+.owner h3 {
+	margin: -.25em 0 0;
+}
+
+.owner span {
+	font-size: 90%;
+	color: #508850;
+}
+
+.question {
+	padding: 15px;
+	border-bottom: 1px solid #000;
+	margin: -15px -15px 0 -15px;
+}
+
+.question img {
+	max-width: 100%;
+}
+
+.answer {
+	padding: 0;
+	list-style-type: none;
+}
+
+.answer li {
+	border-bottom: 1px solid #000;
+	font-size: 80%;
+}
+
+.answer h1,
+.answer h2,
+.answer h4 {
+	font-size: 100%;
+}
+
+.item-view pre {
+	max-width: 95%;
+	padding: 2.5%;
+	border: 1px solid #aaa;
+	background-color: #fff;
+	white-space: pre-wrap;
+}
