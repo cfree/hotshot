@@ -160,5 +160,43 @@
 					transition: 'slide'
 				});
 			});
+
+			// Add pagination handlers
+			$('a[data-icon="forward"], a[data-icon="back"]').on('click', function() {
+				var button = $(this), // cache reference to button clicked
+					dir = button.attr('data-icon'), // get direction
+					page = parseInt($('span.num').eq(0).text(), 10); // get current page number
+
+				if (dir === 'forward') {
+					page++;
+				}
+				else {
+					page--;
+				}
+
+				// Retrieve the requested new page
+				getBounties(page, function(newData) {
+					// Replace the old page's data with the new
+					data = newData;
+					data.currentPage = page;
+					localStorage.setItem('res', JSON.stringify(newData));
+
+					// Hide the spinner manually
+					$.mobile.hidePageLoadingMsg();
+
+					// Replace the results container with the new, rendered list
+					$('#results')
+						.empty()
+						.append($('#listTemplate').render(newData))
+						.find('ul')
+						.listview();
+
+					// Update the display with current page info
+					$('span.num').text(page);
+
+					// Update prev/next classes as needed
+					setClasses();
+				});
+			});
 		});
 })(jQuery);
