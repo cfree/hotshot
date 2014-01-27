@@ -5,6 +5,9 @@
 - Why not use chaining on the $(document) object?
 - Template debugging - DO NOT LIKE
 	- Ensure all template tags have a closing `}}`
+- Missing
+	- Error handling of 0 results
+	- Back button on list page to go back to search screen
 
 ### Progress
-Stopped on page 110, adding code
+Complete
