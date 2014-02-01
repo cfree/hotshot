@@ -1,0 +1,126 @@
+article {
+	width:90%;
+	padding:5%; 
+}
+
+article input {
+	display:none; 
+}
+
+.up-drop-target {
+	height:10em;
+	border:5px dashed #ccc;
+	border-radius:5px; 
+	margin-bottom:1em; 
+	text-align:center; 
+}
+
+.up-drop-target h2 { 
+	margin-top:-.5em; 
+	position:relative; 
+	top:50%; 
+}
+
+.up-selected { 
+	margin:1em 0; 
+	border-bottom:1px solid #ccc; 
+}
+
+.up-selected table { 
+	width:100%; 
+	border-spacing:0; 
+	margin-bottom:1em; 
+}
+
+.up-selected td { 
+	padding:1em 1% 1em 0; 
+	border-bottom:1px dashed #ccc; 
+	font-size:1.2em; 
+}
+
+.up-selected td.type { 
+	width:5%; 
+}
+
+.up-selected td.name { 
+	width:45%; 
+}
+
+.up-selected td.size { 
+	width:25%; 
+}
+
+.up-selected td.remove_all_x { 
+	width:20%; 
+}
+
+.up-selected tr:last-child td { 
+	border-bottom:none; 
+}
+
+.up-selected a { 
+	font-weight:bold; 
+	text-decoration:none; 
+}
+
+.up-table-head { 
+	font-weight:bold; 
+}
+
+.up-remove-all { 
+	color:#ff0000; 
+}
+
+.up-remove { 
+	display:block; 
+	width:17px; 
+	height:17px; 
+	border-radius:500px; 
+	text-align:center; 
+	color:#fff; 
+	background-color:#ff0000; 
+}
+
+.up-progress { 
+	height:1em; 
+	width:100px; 
+	position:relative; 
+	top:4px; 
+}
+
+/* File types */
+.icon { 
+	background:url(../img/page_white.png) no-repeat 0 50%; 
+}
+
+.doc, .docx { 
+	background:url(../img/doc.png) no-repeat 0 50%; 
+}
+
+.exe { 
+	background:url(../img/exe.png) no-repeat 0 50%; 
+}
+
+.html { 
+	background:url(../img/html.png) no-repeat 0 50%; 
+}
+
+.pdf { 
+	background:url(../img/pdf.png) no-repeat 0 50%; 
+}
+
+.png { 
+	background:url(../img/png.png) no-repeat 0 50%; 
+}
+
+.ppt, .pptx { 
+	background:url(../img/pps.png) no-repeat 0 50%; 
+}
+
+.txt { 
+	background:url(../img/txt.png) no-repeat 0 50%; 
+}
+
+.zip { 
+	background:url(../img/zip.png) no-repeat 0 50%; 
+}
