@@ -2,11 +2,14 @@
 	var people = $('[itemtype*="schema.org/Person"]'),
 		peopleData = [];
 
+	console.log(people);
+
 	// Determine if there's any micro-data on the page
 	if (people.length) {
 		// Iterate through each instance
 		people.each(function(i) {
-			var person = microdata.eq(i),
+			//var person = microdata.eq(i),
+			var person = people.eq(i),
 				data = {},
 				contactMethods = {};
 
@@ -69,6 +72,8 @@
 				// Add to data obj
 				data.contactMethods = contactMethods;
 			}
+
+			console.log(data);
 
 			// Add data obj to peopleData arr
 			peopleData.push(data);

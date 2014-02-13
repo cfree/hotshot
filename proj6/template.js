@@ -23,4 +23,22 @@
 			return arr;
 		}
 	});
+
+	// Cache template
+	var template = $.templates($('#contactTemplate').html());
+
+	// Subscribe to message events
+	window.addEventListener('message', function(e) {
+		// Message contents is `issueTemplate`?
+		if (e.data.command === 'issueTemplate') {
+			// Compose new message containing rendered markup
+			var message = {
+				markup: template.render(e.data.context)
+			};
+
+			// Sent message back to popup.js (source)
+			// Same types of files (origin)
+			e.source.postMessage(message, e.origin);
+		}
+	});
 })();

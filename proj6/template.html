@@ -9,18 +9,18 @@
 						<div class="details">
 							<h1>{{:name}}</h1>
 							{{if url}}
-								<span>website: {{url}}</span>
+								<span>website: {{:url}}</span>
 							{{/if}}
 							{{if jobTitle}}
 								<h2>{{:jobTitle}}</h2>
 							{{/if}}
-							{{if companyName}}
+							{{if companyName }}
 								<span class="company">{{:companyName}}</span>
 							{{/if}}
 							{{if address}}
 								<p>{{:address}}</p>
 							{{/if}}
-							{{if contactMethods}}
+							{{if contactMethods }}
 								<dl>
 									{{for ~getMembers(contactMethods)}}
 										<dd>{{:key}}</dd>
@@ -33,11 +33,8 @@
 				</li>
 			{{/for}}
 		</script>
-		<script src="assets/js/jquery-1.8.2.min.js"></script>
-		<script src="assets/js/jsrender.js"></script>
-		<script src="assets/js/template.js"></script>
+		<script src="jquery-1.8.2.min.js"></script>
+		<script src="jsrender.js"></script>
+		<script src="template.js"></script>
 	</head>
-	<body>
-
-	</body>
 </html>
