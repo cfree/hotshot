@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<script id="contactTemplate" type="text/x-jsrender">
+			{{for contacts}}
+				<li>
+					<article>
+						<div class="details">
+							<h1>{{:name}}</h1>
+							{{if url}}
+								<span>website: {{url}}</span>
+							{{/if}}
+							{{if jobTitle}}
+								<h2>{{:jobTitle}}</h2>
+							{{/if}}
+							{{if companyName}}
+								<span class="company">{{:companyName}}</span>
+							{{/if}}
+							{{if address}}
+								<p>{{:address}}</p>
+							{{/if}}
+							{{if contactMethods}}
+								<dl>
+									{{for ~getMembers(contactMethods)}}
+										<dd>{{:key}}</dd>
+										<dt>{{:val}}</dt>
+									{{/for}}
+								</dl>
+							{{/if}}
+						</div>
+					</article>
+				</li>
+			{{/for}}
+		</script>
+		<script src="assets/js/jquery-1.8.2.min.js"></script>
+		<script src="assets/js/jsrender.js"></script>
+		<script src="assets/js/template.js"></script>
+	</head>
+	<body>
+
+	</body>
+</html>

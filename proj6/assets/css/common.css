@@ -1,0 +1,56 @@
+﻿/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated:2010-09-17
+Author:Richard Clark - http://richclarkdesign.com 
+Twitter:@rich_clark
+Modifications by :Dan Wellman
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline; background:transparent; }
+html, body { width:100%; height:100%; }
+body { font-size:75%; line-height:1; }
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section { display:block; }
+nav ul { padding-left:0; list-style:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+/* The Magnificent Clearfix:Updated to prevent margin-collapsing on child elements. j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content:"\0020"; display:block; height:0; overflow:hidden; }
+.clearfix:after { clear:both; } 
+
+/* Fix clearfix:blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom:1; }
+
+/* adapted from http://snipplr.com/view/8840/typographycss/ */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,input,textarea { font-family:Helvetica, Arial, sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-weight:bold; }
+h1 { font-size:3em; line-height:1; margin-bottom:0.5em; }
+h2 { font-size:2em; margin-bottom:0.75em; }
+h3 { font-size:1.5em; line-height:1; margin-bottom:1em; }
+h4 { font-size:1.2em; line-height:1.25; margin-bottom:1.25em; }
+h5 { font-size:1em; margin-bottom:1.5em; }
+h6 { font-size:1em; }
+p { margin:0 0 1.5em; }
+ul, ol, dl { margin:0 0 1.5em; }
+ul { list-style-type:circle; }
+ol { list-style-type:decimal; }
+abbr, acronym { border-bottom:1px dotted #000; }
+address { margin-top:1.5em; font-style:italic; }
+del { color:#000; }
+blockquote { margin:1.5em; font-style:italic; font-size:2em; }
+blockquote:before { content:'\201C'; }
+blockquote:after { content:'\201D'; margin-top:-70px; }
+dfn { font-style:italic; font-weight:bold; }
+pre, code { margin:1.5em 0; white-space:pre; font:1em monospace; line-height:1.5; }
+
+/* content styles */
+ul, ol { padding-left:2em; }
+li { margin-bottom:.5em; }
+p { line-height:1.5em; }
+th, td { text-align:left; }
+.float-left { float:left; margin-right:20px; }
+.float-right { float:right; margin-left:20px; }
+
+/* buttons */
+.button { display:inline-block; padding:5px 10px; border:1px solid #1e5799; border-radius:3px; color:#fff; text-decoration:none; text-shadow:0 1px 1px #1e5799; font-weight:bold; font-size:1.25em; cursor:pointer; background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdkYjllOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTU3OTkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); background:-moz-linear-gradient(top, #7db9e8 0%, #207cca 50%, #2989d8 50%, #1e5799 100%); background:-webkit-linear-gradient(top, #7db9e8 0%,#207cca 50%,#2989d8 50%,#1e5799 100%); background:-o-linear-gradient(top, #7db9e8 0%,#207cca 50%,#2989d8 50%,#1e5799 100%); background:-ms-linear-gradient(top, #7db9e8 0%,#207cca 50%,#2989d8 50%,#1e5799 100%); background:linear-gradient(to bottom, #7db9e8 0%,#207cca 50%,#2989d8 50%,#1e5799 100%); }
+.button:hover:not(.disabled), .button:active:not(.disabled) { background:-moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 50%, #7db9e8 100%); background:-webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); background:-o-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); background:-ms-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); background:linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 50%,#7db9e8 100%); background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); }
+.button.disabled { opacity:.5; cursor:default; }
