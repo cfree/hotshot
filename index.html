@@ -21,6 +21,30 @@
 	li {
 		margin: 6px 0;
 	}
+
+	.status {
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		font-size: 10px;
+		font-weight: bold;
+		color: #fff;
+		margin-left: 10px;
+		padding: 3px 5px;
+		display: inline-block;
+	}
+
+	.done {
+		background: #65E81A;
+	}
+
+	.in-progress {
+		background: #c5cc14;
+	}
+
+	.problem {
+		background: #E81A1A;
+	}
 </style>
 <div id="container">
 	<h1>jQuery Hotshot</h1>
@@ -29,12 +53,17 @@
 	<p>This is the working HTML of the projects covered in the jQuery Hotshot book completed during <a href="http://www.meetup.com/Denver-Code-Club/">Denver Code Club</a>'s study groups.</p>
 
 	<ul>
-		<li><a href="proj1/">Project One: Sliding Puzzle</a></li>
-		<li><a href="proj2/">Project Two: Fixed Sidebar</a></li>
-		<li><a href="proj3/">Project Three: Google Map</a></li>
-		<li><a href="proj4/">Project Four: Bounty Hunter</a></li>
-		<!-- <li><a href="proj5/">Project Five: jQuery File Uploader</a></li>
-		<li><a href="proj6/">Project Six: Extending Chrome with jQuery</a></li> -->
+		<li><a href="proj1/">Project One: Sliding Puzzle</a><span class="status done">Completed</span></li>
+		<li><a href="proj2/">Project Two: Fixed Sidebar</a><span class="status done">Completed</span></li>
+		<li><a href="proj3/">Project Three: Google Map</a><span class="status done">Completed</span></li>
+		<li><a href="proj4/">Project Four: Bounty Hunter</a><span class="status done">Completed</span></li>
+		<li><a href="proj5/">Project Five: jQuery File Uploader</a><span class="status in-progress">In Progress</span></li>
+		<li>
+			<a href="https://github.com/cfree/hotshot/tree/gh-pages/proj6">Project Six: Extending Chrome with jQuery</a><span class="status problem">Unknown Issue</span>
+			<ul>
+				<li>Instructions: <a href="http://developer.chrome.com/extensions/external_extensions.html">Copy files into Chrome as an extension</a></li>
+			</ul>
+		</li>
 	</ul>
 
 	<hr>

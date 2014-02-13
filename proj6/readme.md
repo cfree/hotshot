@@ -11,3 +11,6 @@
 
 ### Status
 Debugging...
+
+### Problems
+- Seems like manifest is ignoring content.js

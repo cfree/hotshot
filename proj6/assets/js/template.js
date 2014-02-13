@@ -38,7 +38,7 @@
 
 			// Sent message back to popup.js (source)
 			// Same types of files (origin)
-			e.source.postMessage(message, event.origin);
+			e.source.postMessage(message, e.origin);
 		}
 	});
 })();
