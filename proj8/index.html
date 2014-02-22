@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html> 
+	<head> 
+		<title>Infinite Scrolling with jQuery</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		
+		<link rel="stylesheet" href="../common/css/common.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body> 
+		<div id="videoList"></div>
+		<script id="containerTemplate" type="text/x-jsrender">
+			<section>
+				<header class="clearfix">
+					<imgsrc="{{>avatar}}" alt="{{>name}}" />
+					<hgroup>
+						<h1>{{>name}}</h1> 
+						<h2>{{>summary.substring(19,220)}}</h2>
+					</hgroup>
+				</header>
+				<ul id="videos"></ul>
+			</section>
+		</script>
+
+		<script id="videoTemplate" type="text/x-jsrender">
+			<li>
+				<article class="clearfix">
+					<header>
+						<a href="{{>content[5]}}" title="Watch video">
+							<img src="{{>thumbnail.hqDefault}}" alt="{{>title}}" />
+						</a>
+						<cite>
+							<a href="{{>content[5]}}" title="Watch video">{{>title}}</a>
+						</cite>
+					</header>
+					<p>
+						{{>~Truncate(12,description)}}
+						<a class="button" href="{{>content[5]}}" title="Watch video">Watch video
+						</a>
+					</p>
+					<div class="meta">
+						<dl>
+							<dt>Duration:</dt>
+							<dd>{{>~FormatTime(duration)}}</dd>
+							<dt>Category:</dt>
+							<dd>{{>category}}</dd>
+							<dt>Comments:</dt>
+							<dd>{{>commentCount}}</dd>
+							<dt>Views:</dt>
+							<dd>{{>viewCount}}</dd>
+							<dt>Likes:</dt>
+							<dd>{{>likeCount}}</dd>
+						</dl>
+					</div>
+				</article>
+			</li>
+		</script>
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="assets/js/jsrender.js"></script>
+		<script src="assets/js/jquery.imagesloaded.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
