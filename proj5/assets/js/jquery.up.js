@@ -218,7 +218,7 @@
 	};
 
 	// Visually show percentage of progress
-	Up.prototype.handleProgress = function() {
+	Up.prototype.handleProgress = function(e, progress) {
 		var complete = Math.round((e.loaded / e.total) * 100);
 
 		progress.progressbar('value', complete);
@@ -269,7 +269,7 @@
 
 						prev.add(parent).empty();
 						prev.text('File uploaded!');
-					});
+					})
 				);
 			});
 		}
