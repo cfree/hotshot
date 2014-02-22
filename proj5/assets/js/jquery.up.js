@@ -92,13 +92,15 @@
 			widget.handleFiles();
 		});
 
+		// Handle 'remove' and 'remove all' links
 		widget.el.on('click', 'td a', function(e) {
 			var removeAll = function() {
-				widget.el.find('table').remove();
-				widget.el.find('input[type="file"]').val('');
-				widget.fileList = [];
+				widget.el.find('table').remove(); // remove table from widget
+				widget.el.find('input[type="file"]').val(''); // clear the input value
+				widget.fileList = []; // clear the fileList array
 			};
 
+			// Has 'remove all' been clicked?
 			if (e.originalEvent.target.className == 'up-remove-all') {
 				removeAll();
 			}
@@ -107,16 +109,21 @@
 					removed,
 					filename = link.closest('tr').children().eq(1).text();
 
+				// Remove the desired row
 				link.closest('tr').remove();
 
+				// In the fileList, compare each item's name property to the filename variable
 				$.each(widget.fileList, function(i, item) {
+					// Do they match?
 					if (item.name === filename) {
 						removed = i;
 					}
 				});
 
+				// Remove the file the current row represented
 				widget.fileList.splice(removed, 1);
 
+				// Is the header row the only one left?
 				if (widget.el.find('tr').length === 1) {
 					removeAll();
 				}
@@ -169,6 +176,7 @@
 			table = container.find('table');
 		}
 
+		// Create table rows
 		$.each(widget.files, function(i, file) {
 			var fileRow = row.clone(),
 				filename = file.name.split('.'),
@@ -181,19 +189,25 @@
 			cell.clone().html(del).appendTo(fileRow);
 			cell.clone().html('<div class="up-progress" />').appendTo(fileRow);
 
+			// Add row to table
 			fileRow.appendTo(table);
 
+			// Add current file to fileList array to be uploaded
 			widget.fileList.push(file);
 		});
 
+		// Does a table in memory exist already?
 		if (!container.find('table').length) {
 			table.appendTo(container);
 		}
 
+		// Add a progress indicator
 		widget.initProgress();
 	};
 
+	// Display the progress bar
 	Up.prototype.initProgress = function() {
+		// Get all files to be uploaded
 		this.el.find('div.up-progress').each(function() {
 			var el = $(this);
 
@@ -203,25 +217,30 @@
 		});
 	};
 
+	// Visually show percentage of progress
 	Up.prototype.handleProgress = function() {
 		var complete = Math.round((e.loaded / e.total) * 100);
 
 		progress.progressbar('value', complete);
 	};
 
+	// Handle the file upload
 	Up.prototype.uploadFiles = function() {
 		var widget = this,
 			a = widget.el.find('a.up-upload');
 
+		// Are there no uploads currently in progress?
 		if (!a.hasClass('disabled')) {
 			a.addClass('disabled');
 
+			// Cycle through the list of files
 			$.each(widget.fileList, function(i, file) {
 				var fd = new FormData(),
-					prog = widget.el.find('div.up-progress').eq(i);
+					prog = widget.el.find('div.up-progress').eq(i); // associate progress bar with file
 
 				fd.append('file-' + i, file);
 
+				// Post form data to server
 				widget.allXHR.push(
 					$.ajax({
 						type: 'POST',
@@ -230,8 +249,10 @@
 						contentType: false,
 						processData: false,
 						xhr: function() {
+							// Store jQuery version of XHR response
 							var xhr = jQuery.ajaxSettings.xhr();
 
+							// Update the progress bar
 							if (xhr.upload) {
 								xhr.upload.onprogress = function(e) {
 									widget.handleProgress(e, prog);
@@ -242,6 +263,7 @@
 						}
 					})
 					.done(function() {
+						// Advise of status upon completion
 						var parent = prog.parent(),
 							prev = parent.prev();
 
