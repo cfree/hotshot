@@ -1,0 +1,28 @@
+{
+  "name": "jquery",
+  "version": "2.1.1pre",
+  "ignore": [
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md",
+    "AUTHORS.txt",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
+  ],
+  "dependencies": {
+    "sizzle": "1.10.18"
+  },
+  "devDependencies": {
+    "requirejs": "2.1.10",
+    "qunit": "1.14.0",
+    "sinon": "1.8.1"
+  },
+  "keywords": [
+    "jquery",
+    "javascript",
+    "library"
+  ]
+}
