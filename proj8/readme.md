@@ -21,4 +21,4 @@
 - imagesLoaded
 
 ### Status
-In Progress
+Complete
