@@ -1,0 +1,12 @@
+﻿.jqheat { overflow-y:scroll; }
+.jqheat header { border-bottom:1px solid #707070; text-align:center; }
+.jqheat h1 { display:inline-block; width:100%; margin:1em 0; }
+.jqheat fieldset { display:inline-block; width:100%; margin-bottom:3em; }
+.jqheat legend { display:none; }
+.jqheat input { width:50%; height:34px; padding:0 5px; border:1px solid #707070; border-radius:3px; }
+.jqheat input.empty { border-color:#ff0000; }
+.jqheat button { padding:9px 5px; }
+.jqheat section { width:100%; margin:auto; position: relative; }
+.jqheat iframe, .jqheat canvas { width:100%; height:100%; position:absolute; left:0; top:0; }
+.jqheat canvas { z-index:999; }
+.jqheat select { width:175px; height:36px; padding:5px; margin:0 .25em 0 .5em; border:1px solid #707070; border-radius:3px; }
