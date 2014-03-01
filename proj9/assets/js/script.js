@@ -36,7 +36,7 @@
 						max: (current.indexOf('max') !== -1) ? jq.trim(current.split('max-width:')[1].split('px')[0]) : 'none'
 					};
 
-				// Save whatcha got
+				// Save whatcha, whatcha, whatcha got (whatcha got)
 				layouts.push(mq);
 			}
 		});
@@ -48,12 +48,42 @@
 		return a.min - b.min;
 	});
 
-	// Send to server so it can be saved
+	// Send to server so it can be saved (...)
 	$.ajax({
 		url: 'heat-map.asmx/saveLayouts',
 		data: JSON.stringify({
-			url: url,
+			url: this.url,
 			layouts: layouts
+		})
+	});
+
+	// Wait for images to fully load...
+	$.imagesLoaded(function() {
+		// Listen for clicks on the page
+		doc.on('click.jqHeat', function(e) {
+			var x = e.pageX,
+				y = e.pageY,
+				docWidth = doc.outerWidth(),
+				docHeight = doc.outerHeight(),
+				layout,
+				click = {
+					url: url,
+					x: Math.ceil((x / docWidth) * 100),
+					y: Math.ceil((y / docHeight) * 100)
+				};
+
+			$.each(layouts, function(i, item) {
+				var min = item.min || 0,
+					max = item.max || docWidth,
+					bp = i + 1;
+
+				if (docWidth >= min && docWidth <= max) {
+					click.layout = bp;
+				}
+				else if (docWidth > max) {
+					click.layout = bp + 1;
+				}
+			});
 		});
-	})
+	});
 })(jQuery);
